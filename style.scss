@@ -1,1 +1,166 @@
+@use "variables" as *;
+@use "layout" as *;
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100%;
+}
+body {
+  font-family: "Outfit", sans-serif;
+  height: 100%;
+  width: 100vw;
+  overflow-x: hidden;
+}
 
+.navbar {
+  background-color: $purple;
+  width: 100%;
+  height: 15vh;
+  @include flex;
+}
+.add_book {
+  @include button;
+  width: 10%;
+  border: 2px solid $border;
+}
+.window {
+  height: 100%;
+}
+.section {
+  background: $bg;
+  height: 100%;
+}
+.container {
+  padding: clamp(1rem, 2vw, 5rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1ch;
+}
+.card {
+  @include flex;
+  justify-content: space-between;
+  flex-direction: column;
+  //   width: clamp(10rem, 20vw, 40rem);
+  padding: clamp(1rem, 3vw, 4rem);
+  background-color: $bg2;
+  gap: 1ch;
+  min-width: 10%;
+  max-width: 15%;
+  border: 2px solid $purple;
+  border-radius: 5px;
+  & .title {
+    font-weight: 600;
+    font-size: clamp(1.2rem, 1.5vw, 3rem);
+    text-align: center;
+  }
+  & .author {
+    font-weight: 500;
+  }
+  & .pages {
+    font-weight: 300;
+  }
+  & .title ~ * {
+    user-select: none;
+  }
+}
+.button {
+  width: 75%;
+  padding: 0.5rem;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  border: 2px solid $purple;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal {
+  border-radius: 5px;
+
+  @include flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  padding: clamp(0rem, 3vw, 5rem);
+
+  max-width: 60%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  gap: 1ch;
+  translate: -50% -50%;
+  .new_book {
+    font-size: clamp(1.2rem, 1.5vw, 3rem);
+  }
+  & .button {
+    user-select: none;
+    margin-top: 2rem;
+    width: 60%;
+  }
+  & .cross {
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    right: 0;
+  }
+  & .reador {
+    user-select: none;
+  }
+  input[type="text"],
+  input[type="number"] {
+    width: 90%;
+    padding: 0.5rem;
+    border: 2px solid $border;
+    border-radius: 5px;
+    -moz-appearance: textfield;
+    &:focus-visible {
+      outline-style: solid;
+      outline-color: $border;
+    }
+    &::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+  .addbtn {
+    background-color: $extra;
+    border-color: $border;
+  }
+  [type="checkbox"] {
+    vertical-align: middle;
+  }
+  transform: scale(0);
+  transition: all 0.2s ease-in-out;
+}
+
+/*phone*/
+@media screen and (max-width: 768px) {
+  .container {
+    justify-content: space-evenly;
+  }
+  .card {
+    min-width: 55%;
+  }
+  .add_book {
+    width: 30%;
+  }
+  .modal {
+    min-width: 50%;
+  }
+}
+
+.blur {
+  filter: brightness(0.4);
+  pointer-events: none;
+}
+.scaleUp {
+  transform: scale(1);
+}
+.read {
+  background-color: $green;
+}
+.unread {
+  background-color: $red;
+}

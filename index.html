@@ -5,15 +5,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./dist/css/style.css">
     <script src="./exBookobj.js" defer></script>
     <title>Document</title>
 </head>
 
-<body>
-    hello
-    <div class="container">
+<body class="">
+    <div class="window">
+        <nav class="navbar">
+            <button class="add_book">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="18" height="18"
+                    viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+                <span>Add book</span>
+            </button>
+        </nav>
 
+        <section class="section">
+
+            <div class="container">
+                <!-- <div class="card">
+                    <div class="title">Harry Potter and the Sorcerer's Stone</div>
+                    <div class="author">Jk rowling</div>
+                    <div class="pages">400</div>
+                    <div class="read__status button">Read</div>
+                    <div class="delete button">Remove</div>
+                </div> -->
+            </div>
+        </section>
+
+    </div>
+
+    <div class="modal__div">
+        <form action="" class="modal" autocomplete="on">
+            <div class="new_book">New Book</div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus cross" width="30"
+                height="30" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round"
+                stroke-linejoin="round" style="transform: rotate(45deg);">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+            <div>
+                <input type="text" placeholder="Title" name="title1" required />
+            </div>
+            <div>
+                <input type="text" placeholder="Author" name="author1" required />
+            </div>
+            <div>
+                <input type="number" placeholder="Pages" name="pages1" required />
+            </div>
+
+            <div>
+                <label for="readbool" id="readbool">Read:</label>
+                <input type="checkbox" name="readbool">
+            </div>
+
+            <input type="submit" class="button addbtn" value="Add" id="submitbtn">
+        </form>
     </div>
 </body>
 

@@ -1,1 +1,202 @@
-/*# sourceMappingURL=style.css.map */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  height: 100%;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.navbar {
+  background-color: #b2a4ff;
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add_book {
+  width: 75%;
+  padding: 0.5rem;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  border: 2px solid #b2a4ff;
+  border-radius: 5px;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.5ch;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 10%;
+  border: 2px solid #f29393;
+}
+
+.window {
+  height: 100%;
+}
+
+.section {
+  background: #fff9ca;
+  height: 100%;
+}
+
+.container {
+  padding: clamp(1rem, 2vw, 5rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1ch;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: clamp(1rem, 3vw, 4rem);
+  background-color: #ffdeb4;
+  gap: 1ch;
+  min-width: 10%;
+  max-width: 15%;
+  border: 2px solid #b2a4ff;
+  border-radius: 5px;
+}
+.card .title {
+  font-weight: 600;
+  font-size: clamp(1.2rem, 1.5vw, 3rem);
+  text-align: center;
+}
+.card .author {
+  font-weight: 500;
+}
+.card .pages {
+  font-weight: 300;
+}
+.card .title ~ * {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.button {
+  width: 75%;
+  padding: 0.5rem;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  border: 2px solid #b2a4ff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal {
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: whitesmoke;
+  padding: clamp(0rem, 3vw, 5rem);
+  max-width: 60%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  gap: 1ch;
+  translate: -50% -50%;
+  transform: scale(0);
+  transition: all 0.2s ease-in-out;
+}
+.modal .new_book {
+  font-size: clamp(1.2rem, 1.5vw, 3rem);
+}
+.modal .button {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin-top: 2rem;
+  width: 60%;
+}
+.modal .cross {
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  right: 0;
+}
+.modal .reador {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.modal input[type=text],
+.modal input[type=number] {
+  width: 90%;
+  padding: 0.5rem;
+  border: 2px solid #f29393;
+  border-radius: 5px;
+  -moz-appearance: textfield;
+}
+.modal input[type=text]:focus-visible,
+.modal input[type=number]:focus-visible {
+  outline-style: solid;
+  outline-color: #f29393;
+}
+.modal input[type=text]::-webkit-inner-spin-button,
+.modal input[type=text] ::-webkit-outer-spin-button,
+.modal input[type=number]::-webkit-inner-spin-button,
+.modal input[type=number] ::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.modal .addbtn {
+  background-color: #ffb4b4;
+  border-color: #f29393;
+}
+.modal [type=checkbox] {
+  vertical-align: middle;
+}
+
+/*phone*/
+@media screen and (max-width: 768px) {
+  .container {
+    justify-content: space-evenly;
+  }
+  .card {
+    min-width: 55%;
+  }
+  .add_book {
+    width: 30%;
+  }
+  .modal {
+    min-width: 50%;
+  }
+}
+.blur {
+  filter: brightness(0.4);
+  pointer-events: none;
+}
+
+.scaleUp {
+  transform: scale(1);
+}
+
+.read {
+  background-color: #aaffaa;
+}
+
+.unread {
+  background-color: #ffaaaa;
+}/*# sourceMappingURL=style.css.map */
