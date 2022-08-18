@@ -9,15 +9,8 @@ class Book {
         this.title = name;
         this.author = author;
         this.pages = pages;
-        if (read) {
-            this.read = true;
-        }
-        else {
-            this.read = false;
-        }
-        // this.info = function () {
-        //     return `Book name:${this.title}\n Author:${this.author}\n Pages:${this.pages}\n ${this.read}`
-        // }
+        this.read = read;
+
     }
 
     addToLibrary() {
@@ -48,8 +41,17 @@ class Book {
         console.table(library);
         readStatus.addEventListener('click', changeReadStatus);
         deletee.addEventListener('click', deleteBook);
-
+        save();
     }
+}
+let oldLibrary = JSON.parse(localStorage.getItem("library") || "[]");
+if (oldLibrary.length != 0) {
+    console.log(true);
+    oldLibrary.forEach(book => {
+        book = new Book(book.title, book.author, book.pages, book.read);
+        book.addToLibrary();
+    }
+    )
 }
 addBook.addEventListener('click', openModal);
 function openModal(e) {
@@ -95,16 +97,8 @@ function takeInput() {
 
 
 function clearInputs() {
-    let inputs = document.querySelectorAll('.modal input');
-    inputs.forEach(input => {
-
-        if ((input.type == 'text') || input.type == 'number') {
-            input.value = null;
-        }
-        else if (input.type == 'checkbox') {
-            input.checked = false;
-        }
-    })
+    let form = document.querySelector('.modal')
+    form.reset();
 }
 
 function closing() {
@@ -143,6 +137,7 @@ function changeReadStatus(e) {
         readStatus.innerHTML = 'Read';
         library[index].read = true;
     }
+    save();
 }
 function deleteBook(e) {
     let deletee = e.target;
@@ -151,4 +146,8 @@ function deleteBook(e) {
     let index = library.findIndex(book => book.title == card.querySelector('.title').innerHTML);
     library.splice(index, 1);
     console.table(library);
+    save();
+}
+function save() {
+    localStorage.setItem('library', JSON.stringify(library));
 }
