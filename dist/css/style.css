@@ -17,6 +17,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(to right, rgba(78, 29, 4, 0.2), rgba(78, 29, 4, 0.2), rgba(78, 29, 4, 0.2));
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 .add_book {
@@ -34,16 +38,22 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  width: 10%;
+  width: 15%;
   border: 2px solid #f29393;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+}
+.add_book:hover {
+  filter: brightness(0.9);
 }
 
 .window {
   height: 100%;
+  background: url("/images/toppng.com-books-library-shelves-lighting-1600x1200.jpg") no-repeat center center fixed;
 }
 
 .section {
-  background: #fff9ca;
   min-height: 100vh;
 }
 
@@ -65,8 +75,13 @@ body {
   gap: 1ch;
   min-width: 10%;
   max-width: 15%;
-  border: 2px solid #b2a4ff;
   border-radius: 5px;
+  background: linear-gradient(135deg, rgba(220, 190, 135, 0.2), rgba(173, 106, 52, 0));
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  color: #080808;
 }
 .card .title {
   font-weight: 600;
@@ -87,14 +102,17 @@ body {
 }
 
 .button {
-  width: 75%;
+  width: 100%;
   padding: 0.5rem;
-  background-color: whitesmoke;
+  background-color: #dcb876;
   display: flex;
   justify-content: center;
-  border: 2px solid #b2a4ff;
   border-radius: 5px;
   cursor: pointer;
+  color: white;
+}
+.button:hover {
+  filter: brightness(0.9);
 }
 
 .modal {
@@ -158,6 +176,7 @@ body {
   margin: 0;
 }
 .modal .addbtn {
+  color: #080808;
   background-color: #ffb4b4;
   border-color: #f29393;
 }
@@ -174,7 +193,7 @@ body {
     min-width: 55%;
   }
   .add_book {
-    width: 30%;
+    width: 40%;
   }
   .modal {
     min-width: 50%;
@@ -190,9 +209,9 @@ body {
 }
 
 .read {
-  background-color: #aaffaa;
+  background-color: #3f6a69;
 }
 
 .unread {
-  background-color: #ffaaaa;
+  background-color: #ef5d58;
 }/*# sourceMappingURL=style.css.map */

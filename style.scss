@@ -17,17 +17,32 @@ body {
   width: 100%;
   height: 15vh;
   @include flex;
+  background: linear-gradient(
+    to right,
+    rgb(78, 29, 4, 0.2),
+    rgb(78, 29, 4, 0.2),
+    rgb(78, 29, 4, 0.2)
+  );
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 .add_book {
   @include button;
-  width: 10%;
+  width: 15%;
   border: 2px solid $border;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
 }
 .window {
   height: 100%;
+  background: url("/images/toppng.com-books-library-shelves-lighting-1600x1200.jpg")
+    no-repeat center center fixed;
 }
 .section {
-  background: $bg;
+  // background: $bg;
   min-height: 100vh;
 }
 .container {
@@ -46,7 +61,7 @@ body {
   gap: 1ch;
   min-width: 10%;
   max-width: 15%;
-  border: 2px solid $purple;
+  // border: 2px solid rgb(220, 190, 135, 0.5);
   border-radius: 5px;
   & .title {
     font-weight: 600;
@@ -62,16 +77,30 @@ body {
   & .title ~ * {
     user-select: none;
   }
+  background: linear-gradient(
+    135deg,
+    rgb(220, 190, 135, 0.2),
+    rgb(173, 106, 52, 0)
+  );
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  color: #080808;
 }
 .button {
-  width: 75%;
+  width: 100%;
   padding: 0.5rem;
-  background-color: whitesmoke;
+  background-color: #dcb876;
   display: flex;
   justify-content: center;
-  border: 2px solid $purple;
+
   border-radius: 5px;
   cursor: pointer;
+  &:hover {
+    filter: brightness(0.9);
+  }
+  color: white;
 }
 
 .modal {
@@ -123,6 +152,7 @@ body {
     }
   }
   .addbtn {
+    color: #080808;
     background-color: $extra;
     border-color: $border;
   }
@@ -142,7 +172,7 @@ body {
     min-width: 55%;
   }
   .add_book {
-    width: 30%;
+    width: 40%;
   }
   .modal {
     min-width: 50%;
@@ -157,8 +187,8 @@ body {
   transform: scale(1);
 }
 .read {
-  background-color: $green;
+  background-color: #3f6a69;
 }
 .unread {
-  background-color: $red;
+  background-color: #ef5d58;
 }
